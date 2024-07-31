@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hade Store - Customisation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Hade Store</div>
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Accessories.html">Accessories</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="customization-info"></div>
+            <h3> </h3>
+            <script>
+            function getQueryParams() {
+                const params = new URLSearchParams(window.location.search);
+                return {
+                    productName: params.get('productName'),
+                    price: params.get('price'),
+                    imageUrl: decodeURIComponent(params.get('imageUrl'))
+                };
+            }
+        
+            function displayCustomizationInfo() {
+                const { productName, price, imageUrl } = getQueryParams();
+        
+                const infoDiv = document.getElementById('customization-info');
+                infoDiv.innerHTML = `
+                    <p>Color: ${productName}</p>
+                    <p>Size: ${price}</p>
+                    <p><img src="${imageUrl}" alt="Item Image" style="max-width: 100px; height: auto;"></p>
+                    <!-- Add more customization options here -->
+                `;
+            }
+        
+            window.onload = displayCustomizationInfo;
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Hade Store. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

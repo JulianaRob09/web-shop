@@ -1,68 +1,144 @@
-/* styles.css */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+/* General styling for the entire body of the website */
+body { 
+    margin: 0; /* Removes default margin */
+    font-family: Arial, Helvetica, sans-serif; /* Sets the default font family */
+    padding: 0; /* Removes default padding */
+    line-height: 1.6; /* Sets the default line height for better readability */
+    background-color: #f4f4f4; /* Sets a light grey background color */
 }
 
+/* Styling for the header section */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-between; /* Spaces out items evenly */
+    align-items: center; /* Centers items vertically */
+    background-color: #431665; /* Dark purple background */
+    padding: 10px 20px; /* Adds padding inside the header */
+    color: white; /* Sets text color to white */
 }
 
+/* Styling for the logo inside the header */
 header .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 30px; /* Large font size */
+    font-weight: bold; /* Bold text */
 }
 
+/* Styling for the navigation list */
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    list-style-type: none; /* Removes default list styling */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Uses flexbox for layout */
 }
 
+/* Styling for each navigation list item */
 nav ul li {
-    margin-left: 20px;
+    margin-left: 20px; /* Adds space between each item */
 }
 
+/* Styling for navigation links */
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    display: block;
+    color: white; /* White text color */
+    text-decoration: none; /* Removes underline from links */
+    padding: 8px 16px; /* Adds padding inside the link */
+    display: block; /* Makes the link a block element */
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover {
-    background-color: #575757;
-    border-radius: 4px;
+    background-color: #575757; /* Darker grey background on hover */
+    border-radius: 4px; /* Rounds the corners */
 }
 
+/* Styling for the main content area */
 main {
-    padding: 20px;
+    padding: 20px; /* Adds padding inside the main area */
 }
 
+/* Styling for sections within the main content area */
+section {
+    display: flex; /* Uses flexbox for layout */
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 2rem; /* Adds space between items */
+}
+
+/* Styling for each individual item within a section */
+section > div {
+    flex: 1 1 calc(33.333% - 2rem); /* Responsive width calculation */
+    background-color: white; /* White background color */
+    padding: 1rem; /* Adds padding inside the item */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+/* Removes default list styling for unordered lists */
+ul {
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+}
+
+/* Styling for a product grid container */
 .product-grid {
-    display: flex;
-    gap: 20px;
+    display: flexbox; /* Uses flexbox for layout */
+    gap: 20px; /* Adds space between items */
 }
 
+/* Styling for individual products within the product grid */
 .product {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+    border: 1px solid #ddd; /* Light grey border */
+    padding: 10px; /* Adds padding inside the product */
+    text-align: center; /* Centers text */
 }
 
+/* Styling for button elements */
+.button {
+    background-color: #d280f0; /* Light purple background color */
+    color: rgb(255, 255, 255); /* White text color */
+    padding: 0.5rem 0.5rem; /* Adds padding inside the button */
+    text-decoration: none; /* Removes underline from links */
+    border-radius: 5px; /* Rounds the corners */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    background-color: #c752d4; /* Darker purple background on hover */
+}
+
+/* Styling for the footer */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    text-align: center; /* Centers text */
+    padding: 3px; /* Adds padding inside the footer */
+    background-color:#431665; /* Dark purple background */
+    color: white; /* White text color */
+    position: relative; /* Sets position relative */
+    width: 100%; /* Full width */
+    bottom: 0; /* Sticks to the bottom */
+}
+
+/* Media query for screens up to 768px wide */
+@media (max-width: 768px) {
+    nav {
+        display: flex; /* Uses flexbox for layout */
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers items */
+    }
+    
+    nav a {
+        margin: 0.5rem 0; /* Adds vertical margin between links */
+    }
+
+    section > div {
+        flex: 1 1 calc(50% - 2rem); /* Adjusts width for smaller screens */
+    }
+}
+
+/* Media query for screens up to 480px wide */
+@media (max-width: 480px) {
+    section > div {
+        flex: 1 1 100%; /* Full width for very small screens */
+    }
+
+    main {
+        padding: 1rem; /* Reduces padding for smaller screens */
+    }
 }
